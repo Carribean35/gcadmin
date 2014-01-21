@@ -1,0 +1,8 @@
+.btn.dash-btn {
+    color: #FFFFFF !important;
+    margin-top: -8px;
+    padding: 8px 14px;
+}
+.btn.dash-btn i {
+    color: inherit !important;
+}
