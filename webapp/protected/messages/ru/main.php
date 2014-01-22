@@ -18,5 +18,6 @@ return array(
 	'Recommended'=>'Рекомендовано',
 	'Image'=>'Изображение',
 	'Create Date'=>'Дата создания',
+	'FIO'=>'ФИО',
 	
 );

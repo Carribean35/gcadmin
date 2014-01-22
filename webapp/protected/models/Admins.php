@@ -36,6 +36,8 @@ class Admins extends EActiveRecord
 			array('email', 'length', 'max'=>100),
 			array('email', 'email'),
 			array('email', 'unique', 'className' => 'Admins', 'attributeName' => 'email', 'caseSensitive' => true),
+			array('fio', 'length', 'max'=>45),
+			array('lastVisit', 'safe'),
 			array('confirmPassword', 'compare', 'compareAttribute'=>'password', 'message' => Yii::t('main','Confirm Password Validate Error'),),
 			array('password', 'compare', 'compareAttribute'=>'confirmPassword', 'message' => Yii::t('main','Confirm Password Validate Error'),),
 			// The following rule is used by search().
@@ -65,6 +67,7 @@ class Admins extends EActiveRecord
 			'email' => Yii::t('main','Email'),
 			'password' => Yii::t('main','Password'),
 			'confirmPassword' => Yii::t('main','Confirm Password'),
+			'fio' => Yii::t('main','FIO'),
 		);
 	}
 

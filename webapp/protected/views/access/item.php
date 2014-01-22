@@ -35,6 +35,14 @@ $this->menuActiveItems[Controller::ACCESS_MENU_ITEM] = 1;
 		</div>
 		
 		<div class="control-group">
+			<?php echo $form->label($model,'fio',array('class'=>'control-label')); ?>
+			<div class="controls">
+				<?php echo $form->textField($model,'fio',array('class'=>'m-wrap medium')); ?>
+				<span class="help-inline"><?php echo $form->error($model,'fio'); ?></span>
+			</div>
+		</div>
+		
+		<div class="control-group">
 			<?php echo $form->label($model,'password',array('class'=>'control-label')); ?>
 			<div class="controls">
 				<?php echo $form->passwordField($model,'password',array('class'=>'m-wrap medium')); ?>

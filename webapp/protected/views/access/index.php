@@ -35,9 +35,13 @@ $this->menuActiveItems[Controller::ACCESS_MENU_ITEM] = 1;
 						'name'=>'email',
 					),
 					array(
-						'header'=>Yii::t('main','Last Visit'),
-						'name'=>'lastVisit',
+						'header'=>Yii::t('main','FIO'),
+						'name'=>'fio',
 					),
+//					array(
+//						'header'=>Yii::t('main','Last Visit'),
+//						'name'=>'lastVisit',
+//					),
 					array(
 						'header'=>Yii::t('main','Actions'),
 						'class'=>'CButtonColumn',

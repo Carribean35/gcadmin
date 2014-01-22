@@ -35,6 +35,10 @@ class AccessController extends RController
 			if(empty($model->password))
 				unset($model->password);
 			if($model->save()) {
+				$connection = Yii::app()->db;
+				$command = $connection->createCommand("INSERT INTO AuthAssignment (itemname, userid, bizrule, data) VALUES ('Admin', ".$model->id.", NULL, 'N;')");
+				$command->execute();
+				
 				$err = false;
 			} else {
 				$err = true;
