@@ -8,7 +8,8 @@ class Controller extends CController
 	
 	const DESKTOP_MENU_ITEM = "desktop";
 	const ACCESS_MENU_ITEM = "access";
-	const NEWS_MENU_ITEM = "news";
+	const CLIENTS_MENU_ITEM = "news";
+	const ORDERS_MENU_ITEM = "orders";
 	
 	public $meta_keywords = array();
 	public $meta_description = array();

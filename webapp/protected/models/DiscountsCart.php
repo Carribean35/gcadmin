@@ -1,27 +1,29 @@
 <?php
 
 /**
- * This is the model class for table "admins".
+ * This is the model class for table "diskont_cart".
  *
- * The followings are the available columns in table 'admins':
+ * The followings are the available columns in table 'diskont_cart':
  * @property integer $id
- * @property string $email
- * @property string $password
+ * @property string $idd1c
+ * @property string $nomer
+ * @property string $cod
+ * @property string $id_kateg
  */
-class Admins extends EActiveRecord
+class DiscountsCart extends EActiveRecord
 {
-	public $confirmPassword;
 	
-	public function getSoult($password)
-	{
-		return md5($password.md5($password));
-	}
+	// отдаём соединение, описанное в компоненте db_vsht
+    public function getDbConnection(){
+        return Yii::app()->db_vsht;
+    }
+	
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'gcadmin.admins';
+		return 'vsht.diskont_cart';
 	}
 
 	/**
@@ -32,17 +34,10 @@ class Admins extends EActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('email', 'required'),
-			array('email', 'length', 'max'=>100),
-			array('email', 'email'),
-			array('email', 'unique', 'className' => 'Admins', 'attributeName' => 'email', 'caseSensitive' => true),
-			array('fio', 'length', 'max'=>45),
-			array('lastVisit', 'safe'),
-			array('confirmPassword', 'compare', 'compareAttribute'=>'password', 'message' => Yii::t('main','Confirm Password Validate Error'),),
-			array('password', 'compare', 'compareAttribute'=>'confirmPassword', 'message' => Yii::t('main','Confirm Password Validate Error'),),
+//			array('nik', 'required'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, email, password', 'safe', 'on'=>'search'),
+//			array('id, name, name2, createDate, text, visible', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -54,8 +49,8 @@ class Admins extends EActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'orders'=>array(self::HAS_MANY, 'Orders', 'id_user'),
-		);
+            'client'=>array(self::HAS_ONE, 'Clients', 'id_diskont'),
+        );
 	}
 
 	/**
@@ -64,11 +59,10 @@ class Admins extends EActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => Yii::t('main','ID'),
-			'email' => Yii::t('main','Email'),
-			'password' => Yii::t('main','Password'),
-			'confirmPassword' => Yii::t('main','Confirm Password'),
-			'fio' => Yii::t('main','FIO'),
+			'id' => Yii::t('main', 'ID'),
+			'nik' => Yii::t('main', 'Nic'),
+			'tel' => Yii::t('main', 'Phone'),
+			'email' => Yii::t('main', 'Email'),
 		);
 	}
 
@@ -91,8 +85,9 @@ class Admins extends EActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
+		$criteria->compare('nik',$this->nik,true);
+		$criteria->compare('tel',$this->tel,true);
 		$criteria->compare('email',$this->email,true);
-		$criteria->compare('password',$this->password,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -103,7 +98,7 @@ class Admins extends EActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Admins the static model class
+	 * @return News the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

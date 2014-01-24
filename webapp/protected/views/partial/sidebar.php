@@ -24,13 +24,23 @@
 			</a>
 		</li>
 		<?php endif;?>
-		<?php if(Yii::app()->user->checkAccess('News.*')): ?>
-		<li class="start <?php if (!empty($this->menuActiveItems[Controller::NEWS_MENU_ITEM])) { echo 'active'; } ?>">
-			<a href="<?php echo $this->createUrl('news/index') ?>">
+		<?php if(Yii::app()->user->checkAccess('Clients.*')): ?>
+		<li class="start <?php if (!empty($this->menuActiveItems[Controller::CLIENTS_MENU_ITEM])) { echo 'active'; } ?>">
+			<a href="<?php echo $this->createUrl('clients/index') ?>">
 			<i class="icon-coffee"></i> 
-			<span class="title">Новости</span>
+			<span class="title">Клиенты</span>
 			<span class="selected"></span>
-			<?php if (!empty($this->menuActiveItems[Controller::NEWS_MENU_ITEM])) { echo '<span class="arrow "></span>'; } ?>
+			<?php if (!empty($this->menuActiveItems[Controller::CLIENTS_MENU_ITEM])) { echo '<span class="arrow "></span>'; } ?>
+			</a>
+		</li>
+		<?php endif;?>
+		<?php if(Yii::app()->user->checkAccess('Orders.*')): ?>
+		<li class="start <?php if (!empty($this->menuActiveItems[Controller::ORDERS_MENU_ITEM])) { echo 'active'; } ?>">
+			<a href="<?php echo $this->createUrl('orders/index') ?>">
+			<i class="icon-coffee"></i> 
+			<span class="title">Заявки на сайте</span>
+			<span class="selected"></span>
+			<?php if (!empty($this->menuActiveItems[Controller::ORDERS_MENU_ITEM])) { echo '<span class="arrow "></span>'; } ?>
 			</a>
 		</li>
 		<?php endif;?>

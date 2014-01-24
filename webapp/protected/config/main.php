@@ -35,7 +35,7 @@ return array(
 		// uncomment the following to enable the Gii tool
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'Enter Your Password Here',
+			'password'=>'yii',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
@@ -91,6 +91,7 @@ return array(
 
 		// uncomment the following to use a MySQL database
 		'db'=>array(
+			'class'=>'system.db.CDbConnection',
 			'connectionString' => ENV_DEV
                     // local development server connection string
                     ? 'mysql:host=localhost;dbname=gcadmin'
@@ -102,6 +103,21 @@ return array(
 			'emulatePrepare' => true,
 			'username' => 'gcadmin',
 			'password' => 'gcadmin',
+			'charset' => 'utf8',
+		),
+		'db_vsht'=>array(
+			'class'=>'system.db.CDbConnection',
+			'connectionString' => ENV_DEV
+                    // local development server connection string
+                    ? 'mysql:host=localhost;dbname=vsht'
+                    // App Engine Cloud SQL connection string
+                    // explanation:
+                    // yii-framework - here is a name of App Engine project
+                    // db - here is the name of Cloud SQL instance
+                    : 'mysql:unix_socket=/cloudsql/yii-framework:db;charset=utf8',
+			'emulatePrepare' => true,
+			'username' => 'vsht',
+			'password' => 'vsht',
 			'charset' => 'utf8',
 		),
 		'errorHandler'=>array(
