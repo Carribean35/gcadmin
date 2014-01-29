@@ -85,12 +85,27 @@ class Orders extends EActiveRecord
 
 		$criteria=new CDbCriteria;
 
+		$admin = "";
+		$client = "";
+		if (!empty($_GET['Orders'])) {
+			if (!empty($_GET['Orders']['status']))
+				$this->status = $_GET['Orders']['status'];
+			if (!empty($_GET['Orders']['admin']))
+				$admin = $_GET['Orders']['admin'];
+			if (!empty($_GET['Orders']['client']))
+				$client = $_GET['Orders']['client'];
+			if (!empty($_GET['Orders']['dat_tim']))
+				$this->dat_tim = $_GET['Orders']['dat_tim'];
+		}
+		
 		$criteria->compare('id',$this->id);
 		$criteria->compare('id_client',$this->id_client,true);
 		$criteria->compare('dat_tim',$this->dat_tim,true);
 		$criteria->compare('id_user',$this->id_user,true);
 		$criteria->compare('status',$this->status,true);
-		$criteria->with = array('client', 'admin');
+		$criteria->compare('admin.fio',$admin,true);
+		$criteria->compare('client.nik',$client,true);
+		$criteria->with = array('client' => array(), 'admin' => array());
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
