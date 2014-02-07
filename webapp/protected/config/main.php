@@ -29,6 +29,8 @@ return array(
 		'application.components.*',
 		'application.modules.rights.*',
 		'application.modules.rights.components.*',
+		'application.modules.reference.*',
+		'application.modules.settings.*',
 	),
 
 	'modules'=>array(
@@ -57,6 +59,18 @@ return array(
 			'install'=>false, // Whether to enable installer.
 			'debug'=>false,
 		),
+		'reference'=>array(
+		
+		),
+		'settings'=>array(
+		
+		),
+		'reports'=>array(
+		
+		),
+		'documents'=>array(
+		
+		),
 	),
 
 	// application components
@@ -67,12 +81,12 @@ return array(
             // CHANGE THIS: Enter here your own Google Cloud Storage bucket name Google App Engine
             'basePath'=>ENV_DEV
                     ? Yii::getPathOfAlias('assets')   // basePath for development version, assets path alias was defined above
-                    : 'gs://yii-assets',    // basePath for production version
+                    : 'gs://vshttorg-assets',    // basePath for production version
             // CHANGE THIS: All files on Google Cloud Storage can be accessed via the URL below,
             // note the bucket name at the end, should be the same as in basePath above
             'baseUrl'=>ENV_DEV
                     ? '/assets'                                            // baseUrl for development App Engine
-                    : 'http://commondatastorage.googleapis.com/yii-assets' // baseUrl for production App Engine
+                    : 'http://commondatastorage.googleapis.com/vshttorg-assets' // baseUrl for production App Engine
 
         ),
         'request'=>array(
@@ -86,6 +100,10 @@ return array(
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+        
+        		'<module:\w+>/<controller:\w+>/<action:\w+>/<id:\d+>'=>'<module>/<controller>/<action>',
+        		'<module:\w+>/<controller:\w+>/<action:\w+>'=>'<module>/<controller>/<action>',
+        		'<module:\w+>/'=>'<module>/main/index',
 			),
 		),
 
@@ -94,30 +112,30 @@ return array(
 			'class'=>'system.db.CDbConnection',
 			'connectionString' => ENV_DEV
                     // local development server connection string
-                    ? 'mysql:host=localhost;dbname=gcadmin'
+                    ? 'mysql:host=localhost;dbname=vshttorg'
                     // App Engine Cloud SQL connection string
                     // explanation:
                     // yii-framework - here is a name of App Engine project
                     // db - here is the name of Cloud SQL instance
-                    : 'mysql:unix_socket=/cloudsql/yii-framework:db;charset=utf8',
+                    : 'mysql:unix_socket=/cloudsql/webvolgashintorg:webvsht;charset=utf8;dbname=vshttorg;',
 			'emulatePrepare' => true,
-			'username' => 'gcadmin',
-			'password' => 'gcadmin',
+			'username' => 'root',
+			'password' => 's28117',
 			'charset' => 'utf8',
 		),
 		'db_vsht'=>array(
 			'class'=>'system.db.CDbConnection',
 			'connectionString' => ENV_DEV
                     // local development server connection string
-                    ? 'mysql:host=localhost;dbname=vsht'
+                    ? 'mysql:host=localhost;dbname=volga_google'
                     // App Engine Cloud SQL connection string
                     // explanation:
                     // yii-framework - here is a name of App Engine project
                     // db - here is the name of Cloud SQL instance
-                    : 'mysql:unix_socket=/cloudsql/yii-framework:db;charset=utf8',
+                    : 'mysql:unix_socket=/cloudsql/webvolgashintorg:webvsht;charset=utf8;dbname=volga_google;',
 			'emulatePrepare' => true,
-			'username' => 'vsht',
-			'password' => 'vsht',
+			'username' => 'root',
+			'password' => 's28117',
 			'charset' => 'utf8',
 		),
 		'errorHandler'=>array(

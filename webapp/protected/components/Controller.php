@@ -6,10 +6,10 @@
 class Controller extends CController
 {
 	
-	const DESKTOP_MENU_ITEM = "desktop";
-	const ACCESS_MENU_ITEM = "access";
-	const CLIENTS_MENU_ITEM = "news";
-	const ORDERS_MENU_ITEM = "orders";
+	const REFERENCE_ITEM = "reference";
+	const DOCUMENTS_ITEM = "documents";
+	const REPORTS_ITEM = "reports";
+	const SETTINGS_ITEM = "settings";
 	
 	public $meta_keywords = array();
 	public $meta_description = array();
@@ -17,6 +17,7 @@ class Controller extends CController
 	public $breadcrumbs;
 	public $breadcrumbs_button;
 	public $menuActiveItems = array();
+	public $topMenuActiveItems = array();
 	public $title_h3;
 	
 	/**

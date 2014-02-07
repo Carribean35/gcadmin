@@ -2,13 +2,15 @@
 
 class SiteController extends RController
 {
-	public function actionIndex()
-	{
+	
+	public function actionIndex() {
+		
 		$this->render('index');
 	}
 	
 	public function actionError()
 	{
+		$this->layout = '//layouts/error';
 		if($error=Yii::app()->errorHandler->error)
 			$this->render('error', $error);
 	}

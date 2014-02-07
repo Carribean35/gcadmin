@@ -40,9 +40,12 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 			<div class="container-fluid">
 				<!-- BEGIN LOGO -->
 				<a class="brand" href="index.html">
-				<img src="/img/logo.png" alt="logo" />
+					<img src="/img/logo.png" alt="logo" />
 				</a>
 				<!-- END LOGO -->
+				<!-- BEGIN HORIZANTAL MENU -->
+				<?php $this->renderPartial('//partial/sidebarTop') ?>
+				<!-- END HORIZANTAL MENU -->
 			</div>
 		</div>
 		<!-- END TOP NAVIGATION BAR -->
@@ -51,7 +54,10 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 	<!-- BEGIN CONTAINER -->
 	<div class="page-container">
 		<!-- BEGIN SIDEBAR -->
-		<?php $this->renderPartial('//partial/sidebar') ?>
+		
+		<?php if (!empty(Yii::app()->controller->module->id)) :?>
+		<?php $this->renderPartial('//../modules/'.Yii::app()->controller->module->id.'/views/partial/sidebar') ?>
+		<?php endif;?>
 		<!-- END SIDEBAR -->
 		<!-- BEGIN PAGE -->
 		<div class="page-content">

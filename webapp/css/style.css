@@ -4795,6 +4795,10 @@ Horezantal Menu(new in v1.2)
   float: left;
 }
 
+.header .hor-menu.pull-right {
+	float: right;
+}
+
 .header .hor-menu ul.nav li a {
   font-size: 14px;
   padding: 11px 18px; 
