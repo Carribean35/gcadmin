@@ -5,7 +5,7 @@ class UserIdentity extends CUserIdentity
 	
 	public function authenticate()
 	{
-		$record=Admins::model()->findByAttributes(array('email'=>$this->username));
+		$record=Worker::model()->findByAttributes(array('email'=>$this->username));
 		if($record===null)
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
 		else if($record->password!==crypt($this->password,$record->password))

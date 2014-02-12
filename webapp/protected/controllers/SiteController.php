@@ -32,7 +32,7 @@ class SiteController extends RController
 			$model->attributes=$_POST['LoginForm'];
 		
 			if($model->validate() && $model->login()) {
-				$this->redirect(Yii::app()->user->returnUrl);
+				$this->redirect('/');
 			}
 		}
 		

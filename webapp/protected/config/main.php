@@ -29,8 +29,10 @@ return array(
 		'application.components.*',
 		'application.modules.rights.*',
 		'application.modules.rights.components.*',
-		'application.modules.reference.*',
-		'application.modules.settings.*',
+		'application.modules.reference.models.*',
+		'application.modules.documents.models.*',
+		'application.modules.reports.models.*',
+		'application.modules.settings.models.*',
 	),
 
 	'modules'=>array(
@@ -120,7 +122,7 @@ return array(
                     : 'mysql:unix_socket=/cloudsql/webvolgashintorg:webvsht;charset=utf8;dbname=vshttorg;',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 's28117',
+			'password' => '',
 			'charset' => 'utf8',
 		),
 		'db_vsht'=>array(
@@ -135,7 +137,7 @@ return array(
                     : 'mysql:unix_socket=/cloudsql/webvolgashintorg:webvsht;charset=utf8;dbname=volga_google;',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 's28117',
+			'password' => '',
 			'charset' => 'utf8',
 		),
 		'errorHandler'=>array(
