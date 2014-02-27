@@ -270,7 +270,7 @@ if ($new) {
 								<div class="control-group no-margin">
 									<label class="control-label">Покупатель</label>
 									<div class="controls">
-										<span class="text ">ИП Мельников К.А.</span>
+										<span class="text "><?php echo $model->cliient->nik;?></span>
 										<span class="help-block"></span>
 									</div>
 								</div>
