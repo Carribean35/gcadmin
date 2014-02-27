@@ -6,3 +6,15 @@
 .btn.dash-btn i {
     color: inherit !important;
 }
+
+.portlet-tabs .nav-tabs.nav-tabs-left > li {
+	float: left;
+}
+
+.portlet-tabs .nav-tabs.nav-tabs-left {
+	margin-left: 10px;
+}
+
+.controls .text {
+	margin-bottom: 12px;
+}

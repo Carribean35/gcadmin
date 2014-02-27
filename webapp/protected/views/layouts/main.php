@@ -27,6 +27,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 	<link href="/css/style-responsive.css" rel="stylesheet" type="text/css"/>
 	<link href="/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
 	<link href="/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" type="text/css" href="/plugins/bootstrap-datepicker/css/datepicker.css" />
 	<!-- END GLOBAL MANDATORY STYLES -->
 	<link rel="shortcut icon" href="favicon.ico" />
 </head>
@@ -122,6 +123,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 	<script src="/plugins/jquery.blockui.min.js" type="text/javascript"></script>  
 	<script src="/plugins/jquery.cookie.min.js" type="text/javascript"></script>
 	<script src="/plugins/uniform/jquery.uniform.min.js" type="text/javascript" ></script>
+	<script type="text/javascript" src="/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 	<!-- END CORE PLUGINS -->
 	<!-- BEGIN PAGE LEVEL SCRIPTS -->
 	<script src="/scripts/app.js" type="text/javascript"></script>
