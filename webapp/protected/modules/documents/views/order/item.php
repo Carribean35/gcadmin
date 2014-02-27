@@ -22,7 +22,6 @@ if ($new) {
 }
 ?>
 
-
 <div class="portlet box blue tabbable">
 	<div class="portlet-title">
 		<div class="caption">&nbsp;</div>
@@ -141,7 +140,7 @@ if ($new) {
 								<div class="control-group">
 									<label class="control-label">Контрагент</label>
 									<div class="controls">
-										<input type="text" placeholder="ИП Мельников К.А." class="m-wrap span12">
+										<input type="text" placeholder="" class="m-wrap span12" value="<?php echo $model->cliient->nik;?>">
 										<span class="help-block"></span>
 									</div>
 								</div>
@@ -195,7 +194,7 @@ if ($new) {
 								<div class="control-group">
 									<label class="control-label">Сумма по документу</label>
 									<div class="controls">
-										<span class="text bold">10 369.00 руб.</span>
+										<span class="text bold"><?php echo $sum?> руб.</span>
 									</div>
 								</div>
 							</div>
@@ -219,7 +218,7 @@ if ($new) {
 								<div class="control-group">
 									<label class="control-label">Всего(руб.)</label>
 									<div class="controls">
-										<span class="text bold">10 369.00</span>
+										<span class="text bold"><?php echo $sum?></span>
 									</div>
 								</div>
 							</div>
@@ -326,23 +325,23 @@ if ($new) {
 											<th>Номенкулатура</th>
 											<th class="numeric">Кол-во</th>
 											<th class="numeric">Ед.</th>
-											<th class="numeric">К.</th>
 											<th class="numeric">Цена</th>
 											<th class="numeric">% Скидки</th>
 											<th class="numeric">Сумма</th>
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td data-title="">1</td>
-											<td data-title="">Nokia HKPL 7 XL ** 235/55R17T</td>
-											<td data-title="" class="numeric">1</td>
-											<td data-title="" class="numeric">шт.</td>
-											<td data-title=" %" class="numeric">1</td>
-											<td data-title="" class="numeric">10 369.00</td>
-											<td data-title="" class="numeric"></td>
-											<td data-title="" class="numeric">10 369.00</td>
-										</tr>
+										<?php foreach ($nomens AS $key => $val) :?>
+											<tr>
+												<td data-title=""><?php echo $key+1?></td>
+												<td data-title=""><?php echo $val['nomen']['nam_for_booker']?></td>
+												<td data-title="" class="numeric"><?php echo $val['kol']?></td>
+												<td data-title="" class="numeric">шт.</td>
+												<td data-title="" class="numeric"><?php echo number_format($val['cen'], 2, ',', ' ');?></td>
+												<td data-title="" class="numeric"></td>
+												<td data-title="" class="numeric"><?php echo number_format($val['cen'] * $val['kol'], 2, ',', ' ');?></td>
+											</tr>
+										<?php endforeach;?>
 									</tbody>
 								</table>
 							</div>
@@ -353,7 +352,7 @@ if ($new) {
 								<div class="control-group">
 									<label class="control-label">Всего(руб.)</label>
 									<div class="controls">
-										<span class="text bold">10 369.00</span>
+										<span class="text bold"><?php echo $sum?></span>
 									</div>
 								</div>
 							</div>

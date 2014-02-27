@@ -98,6 +98,7 @@ class NewOrder extends EActiveRecord
 				$this->dat_tim = $_GET['NewOrder']['dat_tim'];
 		}
 		
+		$criteria->order = "dat_tim DESC";
 		
 		$criteria->compare('id',$this->id);
 		$criteria->compare('id_client',$this->id_client,true);

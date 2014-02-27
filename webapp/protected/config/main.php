@@ -122,7 +122,7 @@ return array(
                     : 'mysql:unix_socket=/cloudsql/webvolgashintorg:webvsht;charset=utf8;dbname=vshttorg;',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 's28117',
+			'password' => 'tureaxiu',
 			'charset' => 'utf8',
 		),
 		'db_vsht'=>array(
@@ -137,7 +137,7 @@ return array(
                     : 'mysql:unix_socket=/cloudsql/webvolgashintorg:webvsht;charset=utf8;dbname=volga_google;',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 's28117',
+			'password' => 'tureaxiu',
 			'charset' => 'utf8',
 		),
 		'errorHandler'=>array(

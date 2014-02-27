@@ -54,7 +54,7 @@ class Clients extends EActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
             'discounts_cart'=>array(self::BELONGS_TO, 'DiscountsCart', 'id_diskont'),
-			'orders'=>array(self::HAS_MANY, 'Orders', 'id_client'),
+			'orders'=>array(self::HAS_MANY, 'Order', 'client'),
         );
 	}
 

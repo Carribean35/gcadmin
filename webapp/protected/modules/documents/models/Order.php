@@ -44,6 +44,7 @@ class Order extends EActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'worker'=>array(self::BELONGS_TO, 'Worker', 'workerId'),
+			'cliient'=>array(self::BELONGS_TO, 'Clients', 'client'),
         );
 	}
 
