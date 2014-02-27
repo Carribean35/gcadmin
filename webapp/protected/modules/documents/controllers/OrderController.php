@@ -38,7 +38,7 @@ class OrderController extends DocumentsController
 		$rows=$command->queryAll();
 		
 		$sum = 0;
-		foreach($rows AS $key => $val) {
+		foreach($rows AS $key => &$val) {
 			$command=$connection->createCommand("SELECT DISTINCT n.*, c.cen as price,n.id as n_id, p1.nam as p1_nam,p2.nam as p2_nam,p3.nam as p3_nam,p4.nam as p4_nam, p5.nam as p5_nam, p6.nam as p6_nam, p7.nam as p7_nam, p8.nam as p8_nam, p9.nam as p9_nam, p10.nam as p10_nam, p11.nam as p11_nam, p12.nam as p12_nam, kn.zakaz as zakaz 
 													FROM nomen n 
 													LEFT JOIN kol_nom kn ON n.id = kn.id_nom 
